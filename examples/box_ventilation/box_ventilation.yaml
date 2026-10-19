@@ -1,0 +1,125 @@
+schema_version: '0.1'
+kind: box_ventilation
+project:
+  name: synthetic-outdoor-lv-enclosure
+  source_type: synthetic
+  data_access: public
+  description: 合成算例：虚构户外低压柜体，参数仅用于演示
+description: 2.0 m × 1.2 m × 2.2 m 户外柜，下部进风（百叶+过滤网），上部排风扇
+internal_heat_W: 1500
+ambient:
+  temperature_C: 35.0
+  pressure_Pa: 101325
+surfaces:
+- id: roof
+  area_m2: 2.4
+  U_W_m2K: 5.5
+  solar_irradiance_W_m2: 800
+  absorptance: 0.6
+- id: front
+  area_m2: 4.4
+  U_W_m2K: 5.5
+  solar_irradiance_W_m2: 400
+  absorptance: 0.6
+- id: back
+  area_m2: 4.4
+  U_W_m2K: 5.5
+- id: sides
+  area_m2: 5.28
+  U_W_m2K: 5.5
+  solar_irradiance_W_m2: 150
+  absorptance: 0.6
+elements:
+- id: IN
+  kind: opening
+  location: inlet
+  area_m2: 0.12
+  K: 6.0
+- id: FL1
+  kind: filter
+  location: inlet
+  rated_flow_m3h: 1000
+  rated_dp_Pa: 40
+  exponent: 1.4
+  loading_factor: 1.0
+- id: OUT
+  kind: opening
+  location: outlet
+  area_m2: 0.12
+  K: 6.0
+fans:
+- id: F1
+  location: outlet
+  count: 1
+  power_W: 60
+  heat_to_zone: false
+  curve:
+  - flow_m3h: 0
+    static_pressure_Pa: 180
+  - flow_m3h: 300
+    static_pressure_Pa: 160
+  - flow_m3h: 600
+    static_pressure_Pa: 125
+  - flow_m3h: 900
+    static_pressure_Pa: 80
+  - flow_m3h: 1200
+    static_pressure_Pa: 20
+ventilation:
+  mode: forced
+  stack_height_m: 1.6
+  stack_assists: true
+study:
+  rank_by: margin
+  air_rise_limit:
+    value_K: 15
+    source: 合成演示值，不代表标准限值
+  scenarios:
+  - id: S1_natural
+    description: 风机停运，仅自然通风
+    set:
+      ventilation.mode: natural
+      fans[F1].count: 0
+  - id: S2_dusty
+    description: 过滤网积尘，阻力为洁净时3倍
+    set:
+      elements[FL1].loading_factor: 3
+  - id: S3_two_fans
+    description: 两台同型风机并联
+    set:
+      fans[F1].count: 2
+  - id: S4_bigger_openings
+    description: 进出风口净面积 +50%
+    set:
+      elements[IN].area_m2: 0.18
+      elements[OUT].area_m2: 0.18
+  - id: S5_slow_fan
+    description: 风机降速至70%
+    set:
+      fans[F1].speed_ratio: 0.7
+  - id: S6_closed
+    description: 封闭箱体，仅壁面散热
+    set:
+      ventilation.mode: closed
+  - id: S7_blocked
+    description: 过滤网严重堵塞（20倍）
+    set:
+      elements[FL1].loading_factor: 20
+  sweeps:
+  - id: filter_loading
+    parameter: elements[FL1].loading_factor
+    values:
+    - 1
+    - 1.5
+    - 2
+    - 3
+    - 4
+    - 5
+  - id: heat_load
+    parameter: internal_heat_W
+    values:
+    - 500
+    - 1000
+    - 1500
+    - 2000
+    - 2500
+    - 3000

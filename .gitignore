@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Local runs and outputs
+runs/
+outputs/
+out_*/
+*_report/
+*.log
+
+# Enterprise or confidential data: never publish
+private_data/
+customer_data/
+企业资料/
+内部资料/
+*_confidential.*
+*_private.*
+.release-denylist*
+
+# CFD case outputs
+cfd_runs/
+processor*/
+postProcessing/

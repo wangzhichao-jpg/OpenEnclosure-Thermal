@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenclosure-thermal"
+version = "0.1.0.dev0"
+description = "Open tools for temperature-rise test analysis and ventilation design of switchgear, prefabricated substations and low-voltage enclosures"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+keywords = ["switchgear", "enclosure", "temperature-rise", "thermal-management", "ventilation", "fan-curve", "substation", "hvac"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Natural Language :: Chinese (Simplified)",
+    "Natural Language :: English",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "openpyxl>=3.1",
+    "pydantic>=2.5",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal"
+Repository = "https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal"
+Mirror = "https://gitee.com/bigtaurus/OpenEnclosure-Thermal"
+
+[project.scripts]
+oet = "open_enclosure_thermal.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

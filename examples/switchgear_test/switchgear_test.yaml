@@ -1,0 +1,107 @@
+schema_version: '0.1'
+kind: test_analysis
+project:
+  name: synthetic-switchgear-heat-run
+  source_type: synthetic
+  data_access: public
+  description: 合成算例：一台虚构开关柜的温升试验，不代表任何企业产品
+sensors:
+- id: T01
+  name: 母排连接处
+  category: conductor
+- id: T02
+  name: 断路器触头
+  category: contact
+- id: T03
+  name: 电缆端子
+  category: terminal
+- id: T04
+  name: 柜内上部空气
+  category: air
+- id: T05
+  name: 柜顶外壳
+  category: wall
+- id: TA1
+  name: 环境温度1
+  category: ambient
+- id: TA2
+  name: 环境温度2
+  category: ambient
+test_runs:
+- id: R1
+  file: R1_1250A_logger.csv
+  time:
+    column: 记录时间
+    kind: datetime
+  columns:
+    T01: CH01 母排连接处
+    T02: CH02 断路器触头
+    T03: CH03 电缆端子
+    T04: CH04 柜内上部空气
+    T05: CH05 柜顶外壳
+    TA1: CH11 环境1
+    TA2: CH12 环境2
+  ambient:
+  - TA1
+  - TA2
+  load:
+    current_A: 1250
+  description: 额定电流，原始方案（记录仪导出格式）
+  configuration: baseline
+- id: R2
+  file: R2_1250A_improved.csv
+  time:
+    column: time_min
+    kind: minutes
+  ambient:
+  - TA1
+  - TA2
+  load:
+    current_A: 1250
+  description: 额定电流，改进通风后
+  configuration: improved
+- id: R3
+  file: R3_1000A.csv
+  time:
+    column: time_s
+    kind: seconds
+  ambient:
+  - TA1
+  - TA2
+  load:
+    current_A: 1000
+  description: 降低电流
+  configuration: baseline
+- id: R4
+  file: R4_800A.csv
+  time:
+    column: time_s
+    kind: seconds
+  ambient:
+  - TA1
+  - TA2
+  load:
+    current_A: 800
+  description: 进一步降低电流
+  configuration: baseline
+stability:
+  window_min: 60
+  max_change_K: 1.0
+  sensors: all
+  source: 合成演示判据：60 min 内温升变化不超过 1 K（用户应按适用标准自行设定）
+quality:
+  spike_K: 5.0
+  exclude_spikes: false
+limits:
+- id: L1
+  quantity: temperature_rise
+  sensor: T02
+  value: 65
+  source: 合成演示值，不代表标准限值
+- id: L2
+  quantity: temperature_rise
+  sensor: T01
+  value: 50
+  source: 合成演示值，不代表标准限值
+final_window_min: 10
+fits: auto
