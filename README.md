@@ -12,7 +12,7 @@
 
 **一句话：** 把温升试验曲线整理成可复用的热参数，并用风机—阻力—热平衡模型比较箱体开口、风机和过滤网方案。
 
-![示例输出](docs/images/overview.png)
+![OpenEnclosure-Thermal：应用对象与开放基准模型箱](docs/images/hero.png)
 
 ## v0.1 能做什么
 
@@ -61,6 +61,8 @@ oet template box  箱体通风模板.xlsx
 
 详细说明见 [docs/快速上手.md](docs/快速上手.md)，方程和适用范围见 [docs/模型说明.md](docs/模型说明.md)。
 
+![合成算例输出：温升曲线与参数识别、风机—系统工作点、方案比较](docs/images/overview.png)
+
 示例运行结果（合成数据）：
 
 ```text
@@ -85,7 +87,7 @@ oet template box  箱体通风模板.xlsx
 |---|---|---|
 | L0 软件验证 | 解析解（封闭箱、给定风量、线性风机—阻力求交、日照综合温度）、合成数据参数恢复、物理方向一致性、拒绝规则 | ✅ 61 项自动测试 |
 | 上游对照 | 与 [switchgear-thermal-model](https://github.com/alliander-opensource/switchgear-thermal-model)（MPL-2.0，可选依赖）在相同参数下互相复现 | ✅ 可选测试 |
-| L2 开放基准 | 电加热模型箱公开试验 | 📋 [方案](docs/开放模型箱基准试验方案.md) |
+| L2 开放基准 | 电加热模型箱公开试验（建科环能科技有限公司环境舱） | 📋 [方案](docs/开放模型箱基准试验方案.md) · [示意几何 STEP](docs/cad/benchmark_model_box_illustrative.step) |
 | L3 企业试点 | 经书面授权的型号数据 | 未开始 |
 
 ## 路线图
@@ -99,8 +101,10 @@ v0.2 时变负荷与气候情景、多试验联合校准、留出预测 → v0.3
 
 ## English summary
 
-OpenEnclosure-Thermal v0.1 provides (1) a temperature-rise test analyser: CSV/Excel import, data-quality checks with logged exclusions, rise curves, user-defined stability criteria, first-order thermal parameter identification with identifiability warnings, current-exponent fitting (≥2 current levels, no extrapolation by default), run comparison and traceable HTML/Excel/JSON reports; and (2) a single-zone enclosure ventilation calculator: buoyancy and fan-driven flow with fan curve / system resistance intersection, openings, filters with dust loading, sol-air solar gains, scenario ranking, sweeps and sensitivities. Results are engineering analysis only, never pass/fail verdicts. MIT licensed.
+OpenEnclosure-Thermal v0.1 provides (1) a temperature-rise test analyser: CSV/Excel import, data-quality checks with logged exclusions, rise curves, user-defined stability criteria, first-order thermal parameter identification with identifiability warnings, current-exponent fitting (≥2 current levels, no extrapolation by default), run comparison and traceable HTML/Excel/JSON reports; and (2) a single-zone enclosure ventilation calculator: buoyancy and fan-driven flow with fan curve / system resistance intersection, openings, filters with dust loading, sol-air solar gains, scenario ranking, sweeps and sensitivities. Results are engineering analysis only, never pass/fail verdicts. MIT licensed, © 2026 Jianke Huanneng Technology Co., Ltd. and contributors.
 
-## 许可
+## 许可与维护
 
-MIT License，见 [LICENSE](LICENSE)。第三方依赖见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+MIT License，版权所有 © 2026 建科环能科技有限公司及贡献者，见 [LICENSE](LICENSE)。第三方依赖见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+本项目由建科环能科技有限公司发起和维护，欢迎个人与机构贡献代码、算例和公开数据。

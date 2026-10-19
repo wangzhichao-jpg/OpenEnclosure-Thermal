@@ -2,3 +2,4 @@
 *.png binary
 *.xlsx binary
 *.cmd text eol=crlf
+*.step binary
