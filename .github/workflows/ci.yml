@@ -16,7 +16,10 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install (TLS enabled)
-        run: python -m pip install -e ".[test]" switchgear-thermal-model
+        run: python -m pip install -e ".[test]"
+      - name: Optional upstream model for cross-check (requires Python >= 3.12)
+        if: matrix.python != '3.11'
+        run: python -m pip install switchgear-thermal-model
       - name: Tests
         run: python -m pytest -q
       - name: Example end-to-end
