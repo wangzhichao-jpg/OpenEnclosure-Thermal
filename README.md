@@ -108,10 +108,14 @@ OpenEnclosure-Thermal v0.1 provides (1) a temperature-rise test analyser: CSV/Ex
 项目负责人：[王智超](https://github.com/wangzhichao-jpg)（ORCID [0000-0001-6662-835X](https://orcid.org/0000-0001-6662-835X)）。
 在论文或工程报告中使用本软件，请按 [CITATION.cff](CITATION.cff) 引用（GitHub 页面右侧 **Cite this repository** 可直接导出 BibTeX/APA）。如果对你有帮助，欢迎在 GitHub 或 [Gitee](https://gitee.com/bigtaurus/OpenEnclosure-Thermal) 点 Star，方便更多同行找到它。问题反馈与公开数据合作请提 [Issue](https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal/issues)。
 
+合作与咨询：[wangzhichao@chinaibee.com](mailto:wangzhichao@chinaibee.com)
+
 ### Author and citation
 
 Project lead: [Zhichao Wang](https://github.com/wangzhichao-jpg) (ORCID [0000-0001-6662-835X](https://orcid.org/0000-0001-6662-835X)).
 If you use this software in a paper or an engineering report, please cite it as described in [CITATION.cff](CITATION.cff) (the **Cite this repository** button on GitHub exports BibTeX/APA). If it is useful to you, a star on GitHub or [Gitee](https://gitee.com/bigtaurus/OpenEnclosure-Thermal) helps other engineers find it. Questions, bug reports and public data: [Issues](https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal/issues).
+
+Cooperation and enquiries: [wangzhichao@chinaibee.com](mailto:wangzhichao@chinaibee.com)
 
 ## 许可与维护
 
