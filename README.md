@@ -103,6 +103,16 @@ v0.2 时变负荷与气候情景、多试验联合校准、留出预测 → v0.3
 
 OpenEnclosure-Thermal v0.1 provides (1) a temperature-rise test analyser: CSV/Excel import, data-quality checks with logged exclusions, rise curves, user-defined stability criteria, first-order thermal parameter identification with identifiability warnings, current-exponent fitting (≥2 current levels, no extrapolation by default), run comparison and traceable HTML/Excel/JSON reports; and (2) a single-zone enclosure ventilation calculator: buoyancy and fan-driven flow with fan curve / system resistance intersection, openings, filters with dust loading, sol-air solar gains, scenario ranking, sweeps and sensitivities. Results are engineering analysis only, never pass/fail verdicts. MIT licensed, © 2026 Jianke Huanneng Technology Co., Ltd. and contributors.
 
+## 作者与引用
+
+项目负责人：[王智超](https://github.com/wangzhichao-jpg)（ORCID [0000-0001-6662-835X](https://orcid.org/0000-0001-6662-835X)）。
+在论文或工程报告中使用本软件，请按 [CITATION.cff](CITATION.cff) 引用（GitHub 页面右侧 **Cite this repository** 可直接导出 BibTeX/APA）。如果对你有帮助，欢迎在 GitHub 或 [Gitee](https://gitee.com/bigtaurus/OpenEnclosure-Thermal) 点 Star，方便更多同行找到它。问题反馈与公开数据合作请提 [Issue](https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal/issues)。
+
+### Author and citation
+
+Project lead: [Zhichao Wang](https://github.com/wangzhichao-jpg) (ORCID [0000-0001-6662-835X](https://orcid.org/0000-0001-6662-835X)).
+If you use this software in a paper or an engineering report, please cite it as described in [CITATION.cff](CITATION.cff) (the **Cite this repository** button on GitHub exports BibTeX/APA). If it is useful to you, a star on GitHub or [Gitee](https://gitee.com/bigtaurus/OpenEnclosure-Thermal) helps other engineers find it. Questions, bug reports and public data: [Issues](https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal/issues).
+
 ## 许可与维护
 
 MIT License，版权所有 © 2026 建科环能科技有限公司及贡献者，见 [LICENSE](LICENSE)。第三方依赖见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

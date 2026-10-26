@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: 'OpenEnclosure-Thermal: temperature-rise test analysis and ventilation design for electrical enclosures'
+type: software
+authors:
+- family-names: Wang
+  given-names: Zhichao
+  orcid: https://orcid.org/0000-0001-6662-835X
+- name: Jianke Huanneng Technology Co., Ltd.
+version: 0.1.0.dev0
+license: MIT
+repository-code: https://github.com/wangzhichao-jpg/OpenEnclosure-Thermal
+url: https://gitee.com/bigtaurus/OpenEnclosure-Thermal
+keywords:
+- switchgear
+- temperature rise
+- enclosure ventilation
+- fan curve
+- thermal management
