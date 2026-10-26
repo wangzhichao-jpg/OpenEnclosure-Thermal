@@ -101,7 +101,7 @@ v0.2 时变负荷与气候情景、多试验联合校准、留出预测 → v0.3
 
 ## English summary
 
-OpenEnclosure-Thermal v0.1 provides (1) a temperature-rise test analyser: CSV/Excel import, data-quality checks with logged exclusions, rise curves, user-defined stability criteria, first-order thermal parameter identification with identifiability warnings, current-exponent fitting (≥2 current levels, no extrapolation by default), run comparison and traceable HTML/Excel/JSON reports; and (2) a single-zone enclosure ventilation calculator: buoyancy and fan-driven flow with fan curve / system resistance intersection, openings, filters with dust loading, sol-air solar gains, scenario ranking, sweeps and sensitivities. Results are engineering analysis only, never pass/fail verdicts. MIT licensed, © 2026 Jianke Huanneng Technology Co., Ltd. and contributors.
+OpenEnclosure-Thermal v0.1 provides (1) a temperature-rise test analyser: CSV/Excel import, data-quality checks with logged exclusions, rise curves, user-defined stability criteria, first-order thermal parameter identification with identifiability warnings, current-exponent fitting (≥2 current levels, no extrapolation by default), run comparison and traceable HTML/Excel/JSON reports; and (2) a single-zone enclosure ventilation calculator: buoyancy and fan-driven flow with fan curve / system resistance intersection, openings, filters with dust loading, sol-air solar gains, scenario ranking, sweeps and sensitivities. Results are engineering analysis only, never pass/fail verdicts. MIT licensed, © 2026 Jianke Environment and Energy Technology Co., Ltd. and contributors.
 
 ## 作者与引用
 
